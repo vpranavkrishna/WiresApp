@@ -20,7 +20,7 @@ import java.util.List;
 public class GameView extends View {
     private static final String TAG = "GameView";
     public static final int WIDTH = 50;
-    private float arr[] = {200,400,600,800,1000,1200};
+    private float arr[] = {200,500,700,900,1400,1200};
     private Paint paintR = new Paint();
     private Paint paintG = new Paint();
     private Paint paintB = new Paint();
@@ -176,20 +176,20 @@ public class GameView extends View {
     }
 
     private void check() {
-           won = true;
-           if ((ly1 < ly3 && ly3 < ly2) || (ly1 < ly4 && ly4 < ly2) || (ly1 < ly5 && ly5 < ly2) || (ly1 < ly6 && ly6 < ly2) || (ly1 > ly3 && ly3 > ly2) || (ly1 > ly4 && ly4 > ly2) || (ly1 > ly5 && ly5 > ly2) || (ly1 > ly6 && ly6 > ly2))
-            {
-                won = false;
-            }
-            if ((ly3 < ly1 && ly1 < ly4) || (ly3 < ly2 && ly2 < ly4) || (ly3 < ly5 && ly5 < ly4) || (ly3 < ly6 && ly6 < ly4) || (ly3 > ly1 && ly1 > ly4) || (ly3 > ly2 && ly2 > ly4) || (ly3 > ly5 && ly5 > ly4) || (ly3 > ly6 && ly6 > ly4))
-            {
-                won = false;
 
-            }
-            if ((ly5 < ly1 && ly1 < ly6) || (ly5 < ly2 && ly2 < ly6) || (ly5 < ly3 && ly3 < ly6) || (ly5 < ly4 && ly4 < ly6) || (ly5 > ly1 && ly1 > ly6) || (ly5 > ly2 && ly2 > ly6) || (ly5 > ly3 && ly3 > ly6) || (ly5 > ly4 && ly4 > ly6))
-            {
-               won = false;
-            }
+           if(!(touchedly1||touchedly2||touchedly3||touchedly4||touchedly5||touchedly6)) {
+               won = true;
+               if ((ly1 < ly3 && ly3 < ly2) || (ly1 < ly4 && ly4 < ly2) || (ly1 < ly5 && ly5 < ly2) || (ly1 < ly6 && ly6 < ly2) || (ly1 > ly3 && ly3 > ly2) || (ly1 > ly4 && ly4 > ly2) || (ly1 > ly5 && ly5 > ly2) || (ly1 > ly6 && ly6 > ly2)) {
+                   won = false;
+               }
+               if ((ly3 < ly1 && ly1 < ly4) || (ly3 < ly2 && ly2 < ly4) || (ly3 < ly5 && ly5 < ly4) || (ly3 < ly6 && ly6 < ly4) || (ly3 > ly1 && ly1 > ly4) || (ly3 > ly2 && ly2 > ly4) || (ly3 > ly5 && ly5 > ly4) || (ly3 > ly6 && ly6 > ly4)) {
+                   won = false;
+
+               }
+               if ((ly5 < ly1 && ly1 < ly6) || (ly5 < ly2 && ly2 < ly6) || (ly5 < ly3 && ly3 < ly6) || (ly5 < ly4 && ly4 < ly6) || (ly5 > ly1 && ly1 > ly6) || (ly5 > ly2 && ly2 > ly6) || (ly5 > ly3 && ly3 > ly6) || (ly5 > ly4 && ly4 > ly6)) {
+                   won = false;
+               }
+           }
         }
         public interface transfer
         {
